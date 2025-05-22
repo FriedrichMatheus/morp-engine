@@ -15,8 +15,8 @@ void InputManager::updateEvent(const SDL_Event& event)
         break;
     } 
     case SDL_KEYUP: {
-
         SDL_Keycode key = event.key.keysym.sym;
+        SDL_Log("Key unpressed: %s (%d)", SDL_GetKeyName(key), key);
         keyState[key] = false;
         break;
     }
