@@ -1,21 +1,25 @@
 SRC=./src/
+BUILD := build/
+OBJDIR := $(BUILD)obj/
 SRCS := $(wildcard $(SRC)*.cpp)
-OBJS := $(SRCS:.cpp=.o)
+OBJS := $(patsubst $(SRC)%.cpp, $(OBJDIR)%.o, $(SRCS))
 
 CXX = g++
 CXXFLAGS = -Wall -std=c++17
-TARGET = build/game_engine
+TARGET := $(BUILD)game_engine
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS) -lSDL2 -lSDL2_image
 
-%.o: %.cpp
+$(OBJDIR)%.o: $(SRC)%.cpp
+	@mkdir -p $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -rf $(OBJDIR) $(TARGET)
 
 run:
 	./$(TARGET)
