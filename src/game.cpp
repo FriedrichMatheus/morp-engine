@@ -2,8 +2,8 @@
 #include "game.h"
 
 
-Game::Game(Renderer* renderer, InputManager* inputManager)
-: renderer(renderer), inputManager(inputManager), entities() {}
+Game::Game(Renderer* renderer)
+: renderer(renderer),  entities() {}
 
 Game::~Game() {}
 

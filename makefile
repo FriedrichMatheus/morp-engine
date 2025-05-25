@@ -5,7 +5,7 @@ SRCS := $(wildcard $(SRC)*.cpp)
 OBJS := $(patsubst $(SRC)%.cpp, $(OBJDIR)%.o, $(SRCS))
 
 CXX = g++
-CXXFLAGS = -Wall -std=c++17
+CXXFLAGS = -Wall -std=c++17 -Iinclude
 TARGET := $(BUILD)game_engine
 
 all: $(TARGET)

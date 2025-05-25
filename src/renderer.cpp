@@ -35,6 +35,14 @@ bool Renderer::init(const std::string& title, int w, int h) {
     return true;
 }
 
+InputManager* Renderer::getInputManager() {
+    return inputManager;
+}
+
+SDL_Renderer* Renderer::getRenderer(){
+    return renderer;
+}
+
 void Renderer::handleEvents() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {

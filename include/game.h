@@ -1,15 +1,15 @@
+#pragma once
 #include "renderer.h"
 #include "input_manager.h"
 #include <vector>
-#include "entity.h"
+ #include "entity.h"
 
-class Game{
+class Game {
     Renderer* renderer;
-    InputManager* inputManager;
     std::vector<Entity*> entities;
 
 public:
-    Game(Renderer* renderer, InputManager* inputManager);
+    Game(Renderer* renderer);
     ~Game();
     void update(float deltaTime);
     void render();

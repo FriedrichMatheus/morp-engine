@@ -15,6 +15,8 @@ public:
     Renderer();
     ~Renderer();
 
+    SDL_Renderer* getRenderer();
+    InputManager* getInputManager();
     bool init(const std::string& title, int w, int h);
     bool isRunning();
     void setInputManager(InputManager* inputManager);

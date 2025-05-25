@@ -24,3 +24,7 @@ void InputManager::updateEvent(const SDL_Event& event)
         break;
     }
 }
+
+bool InputManager::isKeyPressed(SDL_Keycode key) {
+    return keyState[key];
+}

@@ -9,6 +9,6 @@ public:
     InputManager();
 
     void updateEvent(const SDL_Event& e);
-    bool isKeyPressed(SDL_Keycode);
+    bool isKeyPressed(SDL_Keycode key);
     void reset();
 };
